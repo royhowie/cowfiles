@@ -1,8 +1,8 @@
-##cowfiles
+## cowfiles
 
 Additional ASCII cowfiles for [cowsay](http://en.wikipedia.org/wiki/Cowsay)
 
-###installation
+### installation
 First, download and install cowsay
 
 - OSX using Homebrew
@@ -21,7 +21,7 @@ Now, add the new folder to your $COWPATH environment variable. Append this line 
 COWPATH="$COWPATH:$HOME/.cowsay"
 ```
 
-####cowsayfortune
+#### cowsayfortune
 
 If you have [fortune](http://en.wikipedia.org/wiki/Fortune_(Unix)) installed, here is a simple bash function that you can place in your shell's appropriate dotfile (bashrc, zshrc, cshrc) that will give you a useful quip from a funky cow.
 
@@ -32,7 +32,7 @@ function cowsayfortune {
   WHICHCOW=$((RANDOM%$NUMOFCOWS+1))
   THISCOW=`cowsay -l | tail -n +2 | sed -e 's/\ /\'$'\n/g' | sed $WHICHCOW'q;d'`
 
-   #echo "Selected cow: ${THISCOW}, from ${WHICHCOW}"
+   # echo "Selected cow: ${THISCOW}, from ${WHICHCOW}"
    fortune | cowsay -f $THISCOW -W 100
 }
 
